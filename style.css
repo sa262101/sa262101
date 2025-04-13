@@ -1,0 +1,219 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Cursive', 'Poppins', sans-serif;
+    background: linear-gradient(to bottom right, #ffe4e1, #fff0f5);
+    overflow-x: hidden;
+    position: relative;
+    font-family: "Italianno", cursive;
+    font-weight: 400;
+    font-style: normal;
+    
+  }
+  
+  .container {
+    padding: 20px;
+    text-align: center;
+    position: relative;
+  }
+  
+  .photo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+  }  
+
+
+
+  .photo-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 30px;
+    padding: 20px 0;
+    margin: 30px 0;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+.photo-grid::-webkit-scrollbar {
+  display: none;
+}
+
+
+  .photo {
+    background: #ffffffaa;
+    border: 2px solid #f7c8d0;
+    border-radius: 20px;
+    padding: 10px;
+    /*transform: rotate(-3deg);*/
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    position: relative;
+  }
+  
+  .photo:hover {
+    transform: rotate(0deg) scale(1.05);
+  }
+  
+  .photo img {
+    width: 250px;
+    height: auto;
+    border-radius: 15px;
+  }
+  
+  audio {
+    margin-top: 10px;
+    width: 90%;
+    background: #f7c8d0;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    box-shadow: 0px 4px 8px rgba(255, 182, 193, 0.6);
+    /*transform: rotate(-2deg);*/
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Glowing border animation */
+  audio.playing {
+    animation: glow 1.5s infinite alternate;
+  }
+  
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 10px #ff6f91, 0 0 20px #ff6f91, 0 0 30px #ff6f91;
+    }
+    100% {
+      box-shadow: 0 0 20px #ff8fab, 0 0 40px #ff8fab, 0 0 60px #ff8fab;
+    }
+  }
+  
+  /* Customize the media controls */
+  audio::-webkit-media-controls-panel {
+    background-color: #f7c8d0;
+    border-radius: 20px;
+  }
+  
+  audio::-webkit-media-controls-play-button {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/833/833472.png'); /* Cute heart icon */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: brightness(1.2);
+  }
+  
+  audio::-webkit-media-controls-play-button::before {
+    content: none;
+  }
+  
+  audio::-webkit-media-controls-volume-slider {
+    filter: brightness(0.8);
+  }
+  
+
+
+  .scroll-arrows {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+  
+  .arrow {
+    pointer-events: all;
+    background: #ffc0cbcc;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: none;
+  }
+  
+  .arrow:hover {
+    background: #ff99ac;
+    transform: scale(1.1);
+  }
+
+
+
+
+  .message {
+    margin-top: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 2rem;
+    color: #cc3366;
+  }
+  
+  .falling-flowers {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+  }
+  .photo {
+    background: #ffffffaa;
+    border: 2px solid #f7c8d0;
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    position: relative;
+  }
+  
+  /* Remove default rotation here! We’ll add random tilt via JS */
+  
+  .photo:hover {
+    transform: scale(1.05);
+  }
+  
+  .photo img {
+    width: 250px;
+    height: auto;
+    border-radius: 15px;
+  }
+  
+  audio {
+    margin-top: 10px;
+    width: 90%;
+    background: #f7c8d0;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    box-shadow: 0px 4px 8px rgba(255, 182, 193, 0.6);
+    /*transform: rotate(-2deg);*/
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  audio.playing {
+    animation: glow 1.5s infinite alternate;
+  }
+  
+  /* When audio is playing, make the parent photo scale */
+  .photo.playing {
+    transform: scale(1.05) rotate(var(--random-tilt));
+  }
+
+  .photo p{
+    padding: 0%;
+    margin: 0%;
+    color: #cc3366;
+    font-size: 2rem;
+  }
